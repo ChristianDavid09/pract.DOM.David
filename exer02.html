@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad02</title>
+</head>
+<body>
+    <a href="exer01.html">Actividad01</a><br>
+    <a href="index.html">Index</a>
+    <ul id="list"></ul>
+    <script>
+        let lists = ["Horizonte", 
+                    "Caleidoscopio", 
+                    "Albahaca", 
+                    "Susurro", 
+                    "Escarcha", 
+                    "Laberinto", 
+                    "Mariposa", 
+                    "Solsticio", 
+                    "Crisálida", 
+                    "Serenata"];
+
+        for (let list of lists) {
+            let li = document.createElement("li");
+            li.textContent = list;
+            document.getElementById("list").appendChild(li);
+        }
+        /* let confirm = window.confirm("Quieres ordenarlas?"); */
+        setTimeout(() => {
+           let confirm = window.confirm("Quieres ordenarlas?");  
+           if (confirm == true) {
+            document.getElementById("list").innerHTML = "";
+                lists.sort();
+                for (let list of lists) {
+                    let li = document.createElement("li");
+                    li.textContent = list;
+                    document.getElementById("list").appendChild(li);
+                }
+            }           
+        }, 3000);
+        
+
+    </script>
+</body>
+
+</html>
